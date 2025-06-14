@@ -12,13 +12,14 @@
     <button onclick="loadModule('/admin/asignaturas/asignaturas.html', '/admin/asignaturas/js/asignaturas.js')">Asignaturas</button>
     <button onclick="loadModule('/admin/aulas/aulas.html', '/admin/aulas/js/aulas.js')">Aulas</button>
     <button onclick="loadModule('/admin/ubicaciones/ubicaciones.html', '/admin/ubicaciones/js/ubicaciones.js')">Ubicaciones</button>
-
+    <button class="btn-closeSesion" onclick="cerrarSesion()">Cerrar sesión</button>
     </nav>
   </aside>
   <main id="main-content">
   <h2>Bienvenido al Panel Administrativo</h2>
   <p>Seleccione un módulo desde el menú para empezar.</p>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/admin.js"></script>
 </body>
 </html>
@@ -108,8 +109,8 @@ header {
   border-radius: 5px;
 }
 
-.btn {
-  background-color: #2563eb;
+.btn-closeSesion {
+  background-color: #ef1c1c;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -118,7 +119,7 @@ header {
   font-weight: bold;
 }
 
-.btn:hover {
-  background-color: #1d4ed8;
+.btn-closeSesion:hover {
+  background-color: #ee7979;
 }
 </style>
