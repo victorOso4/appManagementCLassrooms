@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e6edf8, #f9fbff);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper {
+  transform: scale(0.75);
+  transform-origin: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container.login-only {
+  min-height: 660px;
+  max-width: 450px;
+  min-width: 400px;
+  
+}
+
+
+.login-container {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 550px;
+  max-width: 480px;
+  min-width: 480px;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: scale(1.01);
+}
+
+h1 {
+  color: #0a326d;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.logo {
+  width: 130px;
+  margin-bottom: 25px;
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.form-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 1.3s ease forwards;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: white;
+  padding: 0 4px;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown):valid + label {
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  color: #0a326d;
+}
+
+.input-group input:focus {
+  border-color: #0a326d;
+  box-shadow: 0 0 0 3px rgba(10, 50, 109, 0.1);
+}
+
+button {
+  padding: 13px;
+  background: #0a326d;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-glow:hover {
+  background: #0e448c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(10, 50, 109, 0.2);
+}
+
+.register-text {
+  margin-top: 18px;
+  font-size: 17px;
+  color: #666;
+  opacity: 0;
+}
+
+.register-text a {
+  color: #0a326d;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-text a:hover {
+  color: #0e448c;
+  text-decoration: underline;
+}
+
+.terms-text {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  animation: slideUp 1.5s ease forwards;
+}
+
+.google-login::before {
+  content: "— O inicia sesión con —";
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 5px;
+  opacity: 0;
+  animation: fadeIn 1.8s ease forwards;
+}
+
+.g_id_signin {
+  width: 120%;
+  max-width: 350px;
+  
+  transition: transform 0.2s, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1.7s ease forwards;
+}
+
+.g_id_signin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(10, 50, 109, 0.2);
+}
+
+.g_id_signin:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(10, 50, 109, 0.15);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

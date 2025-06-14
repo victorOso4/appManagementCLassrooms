@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-container">
+      <h1 class="fade-in">Inicia Sesión</h1>
+      <img src="images/logo_ucaldas.png" alt="Universidad de Caldas" class="logo fade-in" />
+      
+    <form id="login-form" class="form-slide">
+      <div class="input-group">
+        <input type="email" name="id_gmail" required />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" required />
+        <label>Contraseña</label>
+      </div>
+
+      <button type="submit" class="btn-glow">Iniciar Sesión</button>
+    </form>
+
+
+      <div class="google-login">
+        <div id="g_id_onload"
+            data-client_id="483409486795-q67g8i72v01r46m3f38hiqlrhdmcpt23.apps.googleusercontent.com"
+            data-context="signin"
+            data-ux_mode="popup"
+            data-callback="handleCredentialResponse"
+            data-auto_prompt="false">
+          </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signin_with"
+            data-size="large"
+            data-log-alignment="left">
+        </div>
+      </div>
+
+      <p class="register-text fade-in">¿No tienes cuenta? <a href="Register.html">Regístrate</a></p>
+    </div>
+  </div>
+
+  <script src="JS/login.js"></script>
+</body>
+</html>

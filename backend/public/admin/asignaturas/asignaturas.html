@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Asignaturas</title>
+</head>
+<body>
+  <h2 id="formTitle">Gestión de Asignaturas</h2>
+
+  <form id="asignaturaForm">
+    <input type="hidden" id="id_asignatura" name="id_asignatura" />
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+    </div>
+
+    <div class="form-group">
+      <label for="docente">Docente</label>
+      <select id="docente" name="id_docente" required>
+        <option value="" disabled selected>Seleccione un docente</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="estudiante">Estudiante</label>
+      <select id="estudiante" name="id_estudiante" required>
+        <option value="" disabled selected>Seleccione un estudiante</option>
+      </select>
+    </div>
+
+    <button class="btn" type="submit">Guardar</button>
+  </form>
+
+  <hr />
+
+  <h3>Lista de Asignaturas</h3>
+  <table border="1" id="tablaAsignaturas">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Docente</th>
+        <th>Estudiante</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="js/asignaturas.js"></script>
+</body>
+</html>
+  <style>
+      .form-group {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 6px 12px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+    </style>

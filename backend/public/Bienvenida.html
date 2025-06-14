@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bienvenido</title>
+</head>
+<body>
+  <h1 id="mensaje">Cargando...</h1>
+
+  <script>
+    const nombre = localStorage.getItem('nombreUsuario');
+    document.getElementById('mensaje').innerText = nombre
+      ? `¡Bienvenido, ${nombre}!`
+      : 'No se pudo obtener el nombre del usuario.';
+  </script>
+
+  <h2>Consulta de ubicación de aulas</h2>
+  <input type="text" id="pregunta" placeholder="Ej: ¿Dónde está la sala A?" />
+  <button onclick="consultarUbicacion()">Consultar</button>
+  <p id="respuesta"></p>
+
+  <script>
+    function consultarUbicacion() {
+      const pregunta = document.getElementById('pregunta').value;
+
+      fetch('/api/ubicacion/ubicacion-aula', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ pregunta })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('respuesta').innerText = data.respuesta || 'No se recibió una respuesta válida.';
+      })
+      .catch(error => {
+        console.error('Error en el cliente:', error);
+        document.getElementById('respuesta').innerText = 'Error al consultar la ubicación.';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bienvenido</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-container">
+      <h1 id="welcomeMessage" class="fade-in">Cargando...</h1>
+
+      <div class="form-slide">
+        <div class="input-group">
+          <input type="text" id="userQuery" placeholder=" " required />
+          <label for="userQuery">¿Dónde está el aula 304?</label>
+        </div>
+
+        <button class="btn-glow" onclick="consultarUbicacion()">Consultar</button>
+      </div>
+
+      <p id="respuestaUbicacion" class="terms-text"></p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const user = JSON.parse(localStorage.getItem('user'));
+  
+      if (!user) {
+        window.location.href = '/'; // redirige si no hay usuario
+      } else {
+        document.getElementById('welcomeMessage').textContent = `¡Bienvenido, ${user.nombre}!`;
+      }
+  
+      window.consultarUbicacion = function () {
+        const pregunta = document.getElementById('userQuery').value;
+  
+        fetch('/api/ubicacion/ubicacion-aula', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ pregunta })
+        })
+        .then(response => response.json())
+        .then(data => {
+  console.log("Respuesta del servidor:", data); // 👈 Agregado
+  document.getElementById('respuestaUbicacion').innerText = data.respuesta 
+    ? data.respuesta 
+    : 'No se recibió una respuesta válida.';
+})
+
+        .catch(error => {
+          console.error('Error en el cliente:', error);
+          document.getElementById('respuestaUbicacion').innerText = 'Error al consultar la ubicación.';
+        });
+      };
+    });
+  </script>
+  
+</body>
+</html>

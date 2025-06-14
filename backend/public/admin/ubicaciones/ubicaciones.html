@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Ubicaciones</title>
+    <style>
+      .form-group {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 6px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 6px 12px;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Crear / Editar Ubicación</h2>
+    <form id="ubicacionForm">
+      <input type="hidden" id="id_ubicacion" name="id_ubicacion" />
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" id="descripcion" name="descripcion" />
+      </div>
+      <button class="btn" type="submit">Guardar</button>
+    </form>
+
+    <hr />
+
+    <h2>Listado de Ubicaciones</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="ubicacionesTableBody">
+        <!-- Las ubicaciones se insertan aquí dinámicamente -->
+      </tbody>
+    </table>
+
+    <!-- Cambia la ruta si accedes desde una subcarpeta -->
+    <script src="js/ubicaciones.js"></script>
+  </body>
+</html>

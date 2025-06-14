@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Cuenta - U Maps</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <h1 class="fade-in">U Maps</h1>
+            <img src="images/logo_ucaldas.png" alt="Universidad de Caldas" class="logo fade-in" />
+
+            <form id="registerForm" class="form-slide" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" id="nombre" name="nombre" required />
+                    <label>Nombre</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="apellido" name="apellido" required />
+                    <label>Apellido</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required />
+                    <label>Email</label>
+                </div>
+
+                <div class="input-group">
+                    <select id="rol" name="rol" required>
+                        <option value="">Selecciona un rol</option>
+                        <option value="1">Estudiante</option>
+                        <option value="2">Docente</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required />
+                    <label>Contraseña</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required />
+                    <label>Confirmar Contraseña</label>
+                </div>
+
+                <div id="errorMessage" class="error-message" style="display: none; color: red;"></div>
+                <button type="submit" class="btn-glow">Crear Cuenta</button>
+            </form>
+
+            <div class="google-login">
+                <div id="g_id_onload" data-client_id="483409486795-q67g8i72v01r46m3f38hiqlrhdmcpt23.apps.googleusercontent.com" data-context="signup" data-ux_mode="popup"
+                    data-callback="handleCredentialResponse" data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                    data-text="signup_with" data-size="large">
+                </div>
+            </div>
+
+            <p class="terms-text fade-in">
+                Al crear una cuenta, aceptas los <a href="#">términos y condiciones</a> de U Maps.
+            </p>
+
+            <p class="register-text fade-in">
+                ¿Ya tienes cuenta? <a href="Login.html">Inicia Sesión</a>
+            </p>
+        </div>
+    </div>
+    <script src="JS/register.js"></script>
+    
+</body>
+
+</html>
