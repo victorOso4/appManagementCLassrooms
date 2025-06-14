@@ -41,3 +41,8 @@ function loadModule(htmlFile, jsFile) {
       content.innerHTML = `<p>Error cargando el módulo: ${err.message}</p>`;
     });
 }
+   function cerrarSesion() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/';
+    }

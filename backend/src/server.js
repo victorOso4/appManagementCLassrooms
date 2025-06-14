@@ -7,7 +7,7 @@ const { initializeDatabase } = require('./config/database');
 const db = require('./models/index');
 const authRoutes = require('./routes/authroutes');
 const subjectRoutes = require('./routes/adminRoutes');
-
+const proxyAuth  = require('./middlewares/proxyAuth');
 const userRoutes = require('./routes/user.routes');
 const ubicacionRoutes = require('./routes/ubicacionRoutes');
 
