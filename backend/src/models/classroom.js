@@ -2,29 +2,37 @@ const { DataTypes } = require('sequelize');
 const { sequelize } = require('../config/database');
 
 const Aula = sequelize.define('aula', {
-    
-    id_aula: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-        allowNull: false,
-    },
-     nombre: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },  
-    id_asignatura: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    id_ubicacion: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
+  id_aula: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false,
+  },
+  nombre: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  id_asignatura: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  id_ubicacion: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  codigo_qr: {
+    type: DataTypes.TEXT,
+    allowNull: true, // se genera después de la creación
+  },
+  capacidad_foro: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0,
+  }
 }, {
-    tableName: 'aula',
-    schema: 'proyecto',
-    timestamps: false,
+  tableName: 'aula',
+  schema: 'proyecto',
+  timestamps: false,
 });
 
 Aula.associate = (models) => {

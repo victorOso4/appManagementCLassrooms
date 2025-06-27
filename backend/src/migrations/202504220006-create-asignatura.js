@@ -12,6 +12,11 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false
       },
+      cantidad_estudiantes: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
       id_docente: {
         type: Sequelize.INTEGER,
         allowNull: false,

@@ -15,6 +15,7 @@ router.post('/aulas', AulaController.createAula);
 router.get('/aulas', AulaController.getAulas);
 router.put('/aulas/:id_aula', AulaController.updateAula);
 router.delete('/aulas/:id_aula', AulaController.deleteAula);
+router.get('/aulas/cuposDisponibles/:id_aula', AulaController.getCuposDisponibles);
 
 router.post('/ubicacion', UbicacionController.createUbicacion);
 router.get('/ubicacion', UbicacionController.getUbicaciones);

@@ -30,6 +30,7 @@ async function startServer() {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, '../public')));
+    app.use('/qrs', express.static(path.join(__dirname, 'public', 'qrs')));
 
     // Rutas básicas
     app.get('/', (req, res) => {

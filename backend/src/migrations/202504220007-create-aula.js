@@ -31,6 +31,15 @@ module.exports = {
         },
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT'
+      },
+      codigo_qr: {
+        type: Sequelize.TEXT, 
+        allowNull: true 
+      },
+      capacidad_foro: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0 
       }
     }, {
       schema: 'proyecto',
